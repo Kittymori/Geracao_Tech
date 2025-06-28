@@ -1,8 +1,8 @@
 import React from 'react';
-import Layout from 'src/compoments/Layout/Layout.js';
-import Gallery from 'src/compoments/Gallery/Gallery.js';
-import Section from 'src/compoments/Section/Section.js';
-import ProductListing from 'src/pages/ProdutListingPage/ProductListingPage.js';
+import Layout from 'src/compoments/Layout/Layout.jsx';
+import Gallery from 'src/compoments/Gallery/Gallery.jsx';
+import Section from 'src/compoments/Section/Section.jsx';
+import ProductListing from 'src/pages/ProdutListingPage/ProductListingPage.jsx';
 
 const homeSlides = [
   { src: 'public/home-slide-1.jpeg' },

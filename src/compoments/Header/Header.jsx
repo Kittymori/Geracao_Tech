@@ -1,9 +1,9 @@
 import React from 'react';
-import Logo from 'src/compoments/Logo/Logo.js';
-import Search from 'src/compoments/Header/Search.js';
-import AuthLinks from 'src/compoments/Header/AuthLinks.js';
-import Cart from 'src/compoments/Header/Cart.js';
-import Navigation from 'src/compoments/Header/Navigation.js';
+import Logo from 'src/compoments/Logo/Logo.jsx';
+import Search from 'src/compoments/Header/Search.jsx';
+import AuthLinks from 'src/compoments/Header/AuthLinks.jsx';
+import Cart from 'src/compoments/Header/Cart.jsx';
+import Navigation from 'src/compoments/Header/Navigation.jsx';
 import { Link } from 'react-router-dom';
 
 function Header() {

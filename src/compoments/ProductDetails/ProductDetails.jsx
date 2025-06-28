@@ -1,10 +1,10 @@
 
 import React, { useState, useEffect } from 'react';
-import Layout from 'src\compoments\Layout\Layout.js';
-import SortBy from 'src\compoments\SortBy\SortBy.js';
-import FilterGroup from 'src\compoments\FilterGroup\FilterGroup.js';
-import Section from 'src\compoments\Section\Section.js';
-import ProductListing from 'src\compoments\ProductListing\ProductListing.js';
+import Layout from 'src/compoments/Layout/Layout.jsx';
+import SortBy from 'src/compoments/SortBy/SortBy.jsx';
+import FilterGroup from 'src/compoments/FilterGroup/FilterGroup.jsx';
+import Section from 'src/compoments/Section/Section.jsx';
+import ProductListing from 'src/pages/ProdutListingPage/ProductListingPage.jsx';
 
 const allProducts = [
   { id: 'p1', name: "Tênis Vermelho e Preto", image: "public/product-thumb-1.jpeg", price: 250.00, priceDiscount: 199.90, category: 'Tenis', brand: 'Marca A' },

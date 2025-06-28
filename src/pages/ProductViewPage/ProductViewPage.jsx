@@ -1,12 +1,12 @@
 
 import React from 'react';
 import { useParams } from 'react-router-dom';
-import Layout from 'src/components/Layout/Layout.js';
-import Gallery from 'src/components/Gallery/Gallery.js';
-import BuyBox from 'src/components/BuyBox/BuyBox.js';
-import ProductOptions from 'src/components/ProductOptions/ProductOptions.js';
-import Section from 'src/components/Section/Section.js';
-import ProductListing from 'src/components/ProductListing/ProductListing.js';
+import Layout from 'src/components/Layout/Layout.jsx';
+import Gallery from 'src/components/Gallery/Gallery.jsx';
+import BuyBox from 'src/components/BuyBox/BuyBox.jsx';
+import ProductOptions from 'src/components/ProductOptions/ProductOptions.jsx';
+import Section from 'src/components/Section/Section.jsx';
+import ProductListing from 'src/pages/ProdutListingPage/ProductListingPage.jsx';
 
 function ProductViewPage() {
   const { productId } = useParams();
