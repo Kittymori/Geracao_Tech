@@ -1,5 +1,5 @@
 import React from 'react';
-import LogoHeader from 'assets\logo-header.svg';
+import LogoHeader from 'assets/logo-header.svg';
 
 function Logo() {
   return (
@@ -7,7 +7,6 @@ function Logo() {
       src={LogoHeader}
       alt="DRIP STORE Logo"
       style={{ width: '253px', height: '44px' }}
-      className="app-logo" // Adicione uma classe para estilização adicional via CSS
     />
   );
 }

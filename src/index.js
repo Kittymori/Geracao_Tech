@@ -1,8 +1,8 @@
 // src/index.js (exemplo)
 
 import React from 'react';
-import ReactDOM from 'react-dom/client'; // Para React 18+
-import App from './App'; // Importa o seu componente App
+import ReactDOM from 'react-dom/client';
+import App from 'src/App.js';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
