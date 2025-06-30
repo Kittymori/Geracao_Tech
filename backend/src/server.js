@@ -12,7 +12,6 @@ require('./models/ProductImage.js');
 require('./models/ProductOption.js');
 require('./models/ProductCategory.js');
 
-// Sincronizar o banco de dados
 sequelize.sync({ force: false })
   .then(() => {
     app.listen(PORT, () => {
