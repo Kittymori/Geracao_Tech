@@ -4,7 +4,7 @@ import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 import HomePage from './pages/HomePage/HomePage.jsx';
-import ProductListingPage from './pages/ProdutListingPage/ProductListingPage.jsx';
+import ProductListingPage from './pages/ProductListingPage/ProductListingPage.jsx';
 import ProductViewPage from './pages/ProductViewPage/ProductViewPage.jsx';
 
 function App() {
