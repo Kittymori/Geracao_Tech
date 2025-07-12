@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import SearchIcon from 'assets/Search.png';
+import SearchIcon from 'src/assets/Search.png';
 
 function Search() {
   const [searchTerm, setSearchTerm] = useState('');

@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import CartSvg from 'assets/mini-cart.svg';
+import CartSvg from 'src/assets/mini-cart.svg';
 
 function CartIcon() {
   const itemCount = 0;
