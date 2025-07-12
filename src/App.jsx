@@ -9,7 +9,8 @@ import ProductViewPage from './pages/ProductViewPage/ProductViewPage.jsx';
 
 function App() {
   return (
-    <Router>
+    
+   <Router>
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/products" element={<ProductListingPage />} />
