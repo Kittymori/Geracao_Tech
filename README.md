@@ -1,1 +1,3 @@
 Observações: O projeto foi realizado por Catarina Elissa da Silva Pereira. A implementação foi inicialmente realizada com CSS e posteriormente adaptada para Tailwind CSS CDN. Utilizado o Codespace do Github como ambiente de desenvolvimento em React. Tanto o Front-end quanto o Back-end foram implementados nesse repositório.
+
+Observações após a tentativa de avaliação: Algumas modificações solicitadas foram realizadas no repositório, entretanto Tailwind CSS não está com funcionamento correto no Codespace peço que por mais que não esteja aparecendo algum visual saiba que foi por problema no próprio Codespace que eu não pude resolver e todas as classes estão inseridas corretamente, então segue aqui o deploy: https://geracao-tech-3.onrender.com
