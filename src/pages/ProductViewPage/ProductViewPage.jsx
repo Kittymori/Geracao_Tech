@@ -1,11 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
-import Layout from 'src/components/Layout/Layout.jsx';
-import Gallery from 'src/components/Gallery/Gallery.jsx';
-import BuyBox from 'src/components/BuyBox/BuyBox.jsx';
-import ProductOptions from 'src/components/ProductOptions/ProductOptions.jsx';
-import Section from 'src/components/Section/Section.jsx';
-import ProductListing from 'src/pages/ProdutListingPage/ProductListingPage.jsx'; 
+import Layout from '../../components/Layout/Layout.jsx';
+import Gallery from '../../components/Gallery/Gallery.jsx';
+import BuyBox from '../../components/BuyBox/BuyBox.jsx';
+import ProductOptions from '../../components/ProductOptions/ProductOptions.jsx';
+import Section from '../../components/Section/Section.jsx';
 
 
 import api from '../../services/api';
