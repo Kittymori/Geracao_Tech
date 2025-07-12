@@ -1,5 +1,3 @@
-// frontend/src/pages/ProductViewPage/ProductViewPage.jsx
-
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import Layout from 'src/components/Layout/Layout.jsx';

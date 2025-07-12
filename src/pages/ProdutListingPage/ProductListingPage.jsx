@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from 'react';
 import Layout from 'src/components/Layout/Layout.jsx';
 import SortBy from 'src/components/SortBy/SortBy.jsx';
