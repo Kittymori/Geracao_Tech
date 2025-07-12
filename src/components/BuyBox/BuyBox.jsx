@@ -1,5 +1,5 @@
 import React from 'react';
-import StarIcon from 'src/assets/star-icon.svg';
+import StarIcon from '../../assets/star-icon.svg';
 
 function BuyBox({
   name,

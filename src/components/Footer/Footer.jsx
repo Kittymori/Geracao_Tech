@@ -1,9 +1,9 @@
 // src/components/Footer/Footer.js
 
 import React from 'react';
-import FacebookIcon from 'src/assets/facebook.svg';
-import InstagramIcon from 'src/assets/instagram.svg';
-import TwitterIcon from 'src/assets/twitter.svg';
+import FacebookIcon from '../../assets/facebook.svg';
+import InstagramIcon from '../../assets/instagram.svg';
+import TwitterIcon from '../../assets/twitter.svg';
 
 function Footer() {
   const currentYear = new Date().getFullYear();
