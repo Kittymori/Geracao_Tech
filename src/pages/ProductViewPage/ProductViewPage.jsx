@@ -1,13 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
-import Layout from '../components/Layout/Layout.jsx';
-import Gallery from '../components/Gallery/Gallery.jsx';
-import BuyBox from '../components/BuyBox/BuyBox.jsx';
-import ProductOptions from '../components/ProductOptions/ProductOptions.jsx';
-import Section from '../components/Section/Section.jsx';
+import Layout from 'src/compoments/Layout/Layout.jsx';
+import Gallery from 'src/compoments/Gallery/Gallery.jsx';
+import BuyBox from 'src/compoments/BuyBox/BuyBox.jsx';
+import ProductOptions from 'src/compoments/ProductOptions/ProductOptions.jsx';
+import Section from 'src/compoments/Section/Section.jsx';
 
 
-import api from '../services/api';
+import api from 'src/services/api.js';
 
 function ProductViewPage() {
   const { productId } = useParams();
