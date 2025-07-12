@@ -4,22 +4,37 @@ import Layout from 'src/components/Layout/Layout.jsx';
 import SortBy from 'src/components/SortBy/SortBy.jsx';
 import FilterGroup from 'src/components/FilterGroup/FilterGroup.jsx';
 import Section from 'src/components/Section/Section.jsx';
-
-const allProducts = [
-  { id: 'p1', name: "Tênis Vermelho e Preto", image: "public/product-thumb-1.jpeg", price: 250.00, priceDiscount: 199.90, category: 'Tenis', brand: 'Marca A' },
-  { id: 'p2', name: "Tênis Vermelho", image: "public/product-thumb-2.jpeg", price: 180.00, category: 'Tenis', brand: 'Marca B' },
-  { id: 'p3', name: "Calçado Marrom", image: "public/product-thumb-3.jpeg", price: 350.00, priceDiscount: 280.00, category: 'Calçados', brand: 'Marca A' },
-  { id: 'p4', name: "Tênis Verde e Branco", image: "public/product-thumb-4.jpeg", price: 180.00, category: 'Tenis', brand: 'Marca C' },
-  { id: 'p5', name: "Tênis Esportiva Verde", image: "public/product-thumb-5.jpeg", price: 450.00, category: 'Esportivos', brand: 'Marca B' },
-];
+import ProductListing from 'src/components/ProductListing/ProductListing.jsx';
+import api from '../../services/api';
 
 function ProductListingPage() {
-  const [products, setProducts] = useState(allProducts);
+  const [products, setProducts] = useState([]);
+  const [allFetchedProducts, setAllFetchedProducts] = useState([]);
   const [sortOrder, setSortOrder] = useState('');
   const [filters, setFilters] = useState({ categories: [], brands: '' });
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
 
   useEffect(() => {
-    let filteredAndSortedProducts = [...allProducts];
+    const fetchProducts = async () => {
+      try {
+        setLoading(true);
+        setError(null);
+        const response = await api.get('/api/products');
+        setProducts(response.data);
+        setAllFetchedProducts(response.data);
+      } catch (err) {
+        console.error('Erro ao buscar produtos:', err);
+        setError('Não foi possível carregar os produtos. Verifique sua conexão ou tente novamente mais tarde.');
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchProducts();
+  }, []);
+  useEffect(() => {
+    let filteredAndSortedProducts = [...allFetchedProducts]; // Usa a lista completa da API para filtrar/ordenar
 
     if (filters.categories.length > 0) {
       filteredAndSortedProducts = filteredAndSortedProducts.filter(product =>
@@ -27,9 +42,9 @@ function ProductListingPage() {
       );
     }
     if (filters.brands) {
-        filteredAndSortedProducts = filteredAndSortedProducts.filter(product =>
-            product.brand === filters.brands
-        );
+      filteredAndSortedProducts = filteredAndSortedProducts.filter(product =>
+        product.brand === filters.brands
+      );
     }
 
     if (sortOrder === 'lowest_price') {
@@ -39,7 +54,7 @@ function ProductListingPage() {
     }
 
     setProducts(filteredAndSortedProducts);
-  }, [sortOrder, filters]);
+  }, [sortOrder, filters, allFetchedProducts]);
 
   const handleSortChange = (order) => {
     setSortOrder(order);
@@ -59,6 +74,26 @@ function ProductListingPage() {
       return prevFilters;
     });
   };
+
+  if (loading) {
+    return (
+      <Layout>
+        <div className="flex-grow p-4 text-center">
+          <p>Carregando produtos...</p>
+        </div>
+      </Layout>
+    );
+  }
+
+  if (error) {
+    return (
+      <Layout>
+        <div className="flex-grow p-4 text-center text-red-600">
+          <p>{error}</p>
+        </div>
+      </Layout>
+    );
+  }
 
   return (
     <Layout>

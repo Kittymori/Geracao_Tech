@@ -1,34 +1,23 @@
+// frontend/src/pages/ProductViewPage/ProductViewPage.jsx
 
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import Layout from 'src/components/Layout/Layout.jsx';
 import Gallery from 'src/components/Gallery/Gallery.jsx';
 import BuyBox from 'src/components/BuyBox/BuyBox.jsx';
 import ProductOptions from 'src/components/ProductOptions/ProductOptions.jsx';
 import Section from 'src/components/Section/Section.jsx';
-import ProductListing from 'src/pages/ProdutListingPage/ProductListingPage.jsx';
+import ProductListing from 'src/pages/ProdutListingPage/ProductListingPage.jsx'; 
+
+
+import api from '../../services/api';
 
 function ProductViewPage() {
   const { productId } = useParams();
-  const product = {
-    id: productId || 'produto-exemplo-123',
-    name: "Tênis Esportivo Pro Max",
-    reference: "TENIS-PROMAX-X1Y2",
-    stars: 4.5,
-    rating: 128,
-    price: 399.90,
-    priceDiscount: 299.90,
-    description: "Este tênis oferece o máximo em conforto e desempenho. Ideal para corrida e atividades diárias, com tecnologia de amortecimento avançada e design moderno. Possui cabedal em malha respirável, entressola responsiva e solado antiderrapante. Perfeito para quem busca estilo e funcionalidade.",
-    images: [
-      { src: "public/produc-image-1.jpeg" },
-      { src: "public/produc-image-2.jpeg" },
-      { src: "public/produc-image-3.jpeg" },
-      { src: "public/produc-image-4.jpeg" },
-      { src: "public/produc-image-5.jpeg" }
-    ],
-    availableSizes: ['38', '39', '40', '41', '42', '43', '44'],
-    availableColors: ['#000000', '#FFFFFF', '#FF0000', '#0000FF']
-  };
+
+  const [product, setProduct] = useState(null);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
 
   const recommendedProducts = [
     { id: 'rec1', name: "Tênis 1", image: "public/product-thumb-4.jpeg", price: 99.90 },
@@ -37,8 +26,36 @@ function ProductViewPage() {
     { id: 'rec4', name: "Tênis 4", image: "public/product-thumb-5.jpeg", price: 70.00 },
   ];
 
+  useEffect(() => {
+    const fetchProductDetails = async () => {
+      try {
+        setLoading(true);
+        setError(null);  
+
+        const response = await api.get(`/api/products/${productId}`);
+        setProduct(response.data);
+      } catch (err) {
+        console.error('Erro ao buscar detalhes do produto:', err);
+        if (err.response && err.response.status === 404) {
+          setError('Produto não encontrado.');
+        } else {
+          setError('Não foi possível carregar os detalhes do produto. Tente novamente mais tarde.');
+        }
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    if (productId) {
+      fetchProductDetails();
+    } else {
+      setLoading(false); 
+      setError('ID do produto não fornecido na URL.');
+    }
+  }, [productId]);
+
   const handleSizeSelect = (size) => {
-    console.log("Tamanho selecionado:", size)
+    console.log("Tamanho selecionado:", size);
   };
 
   const handleColorSelect = (color) => {
@@ -46,8 +63,38 @@ function ProductViewPage() {
   };
 
   const handleAddToCart = () => {
-    console.log("Produto adicionado ao carrinho!")
+    console.log("Produto adicionado ao carrinho!");
   };
+
+  if (loading) {
+    return (
+      <Layout>
+        <div className="p-5 max-w-7xl mx-auto my-8 text-center">
+          <p>Carregando detalhes do produto...</p>
+        </div>
+      </Layout>
+    );
+  }
+
+  if (error) {
+    return (
+      <Layout>
+        <div className="p-5 max-w-7xl mx-auto my-8 text-center text-red-600">
+          <p>{error}</p>
+        </div>
+      </Layout>
+    );
+  }
+
+  if (!product) {
+    return (
+      <Layout>
+        <div className="p-5 max-w-7xl mx-auto my-8 text-center">
+          <p>Nenhum produto para exibir.</p>
+        </div>
+      </Layout>
+    );
+  }
 
   return (
     <Layout>
@@ -110,4 +157,4 @@ function ProductViewPage() {
   );
 }
 
-export default ProductViewPage; // Exporta como ProductViewPage
+export default ProductViewPage;
