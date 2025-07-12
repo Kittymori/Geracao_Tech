@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from 'react';
-import Layout from 'src/components/Layout/Layout.jsx';
-import SortBy from 'src/components/SortBy/SortBy.jsx';
-import FilterGroup from 'src/components/FilterGroup/FilterGroup.jsx';
-import Section from 'src/components/Section/Section.jsx';
-import ProductListing from 'src/components/ProductListing/ProductListing.jsx';
+import { useParams } from 'react-router-dom';
+import Layout from '../../components/Layout/Layout.jsx';
+import SortBy from '../../components/SortBy/SortBy.jsx';
+import FilterGroup from '../../components/FilterGroup/FilterGroup.jsx';
+import Section from '../../components/Section/Section.jsx';
+import ProductListing from '../../components/ProductListing/ProductListing.jsx'
 import api from '../../services/api';
 
 function ProductListingPage() {
@@ -33,7 +34,7 @@ function ProductListingPage() {
     fetchProducts();
   }, []);
   useEffect(() => {
-    let filteredAndSortedProducts = [...allFetchedProducts]; // Usa a lista completa da API para filtrar/ordenar
+    let filteredAndSortedProducts = [...allFetchedProducts];
 
     if (filters.categories.length > 0) {
       filteredAndSortedProducts = filteredAndSortedProducts.filter(product =>
