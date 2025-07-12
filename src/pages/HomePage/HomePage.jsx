@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from 'react';
-import Layout from 'src/components/Layout/Layout.jsx';
-import Gallery from 'src/components/Gallery/Gallery.jsx';
-import Section from 'src/components/Section/Section.jsx';
-import ProductListing from 'src/pages/ProductListingPage/ProductListingPage.jsx';
+import Layout from '../../components/Layout/Layout.jsx';
+import Gallery from '../../components/Gallery/Gallery.jsx';
+import Section from '../../components/Section/Section.jsx';
+import ProductListing from '../../pages/ProductListingPage/ProductListingPage.jsx';
 
-import api from 'src/services/api.js';
+import api from '../../services/api.js';
 
 const homeSlides = [
   { src: 'public/home-slide-1.jpeg' },

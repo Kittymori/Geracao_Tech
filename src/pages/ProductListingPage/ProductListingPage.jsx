@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
-import Layout from 'src/components/Layout/Layout.jsx';
-import SortBy from 'src/components/SortBy/SortBy.jsx';
-import FilterGroup from 'src/components/FilterGroup/FilterGroup.jsx';
-import Section from 'src/components/Section/Section.jsx';
-import ProductListing from 'src/components/ProductListing/ProductListing.jsx'
-import api from 'src/services/api.js';
+import Layout from '../../components/Layout/Layout.jsx';
+import SortBy from '../../components/SortBy/SortBy.jsx';
+import FilterGroup from '../../components/FilterGroup/FilterGroup.jsx';
+import Section from '../../components/Section/Section.jsx';
+import ProductListing from '../../components/ProductListing/ProductListing.jsx'
+import api from '../../services/api.js';
 
 function ProductListingPage() {
   const [products, setProducts] = useState([]);
