@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
-import Layout from 'src/compoments/Layout/Layout.jsx';
-import SortBy from 'src/compoments/SortBy/SortBy.jsx';
-import FilterGroup from 'src/compoments/FilterGroup/FilterGroup.jsx';
+import Layout from 'src/components/Layout/Layout.jsx';
+import SortBy from 'src/components/SortBy/SortBy.jsx';
+import FilterGroup from 'src/components/FilterGroup/FilterGroup.jsx';
 import Section from 'src/components/Section/Section.jsx';
 import ProductListing from 'src/components/ProductListing/ProductListing.jsx'
 import api from 'src/services/api.js';

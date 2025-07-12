@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import Layout from 'src/compoments/Layout/Layout.jsx';
-import Gallery from 'src/compoments/Gallery/Gallery.jsx';
-import Section from 'src/compoments/Section/Section.jsx';
+import Layout from 'src/components/Layout/Layout.jsx';
+import Gallery from 'src/components/Gallery/Gallery.jsx';
+import Section from 'src/components/Section/Section.jsx';
 import ProductListing from 'src/pages/ProductListingPage/ProductListingPage.jsx';
 
 import api from 'src/services/api.js';
