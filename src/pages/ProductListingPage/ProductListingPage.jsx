@@ -4,7 +4,7 @@ import Layout from '../../components/Layout/Layout.jsx';
 import SortBy from '../../components/SortBy/SortBy.jsx';
 import FilterGroup from '../../components/FilterGroup/FilterGroup.jsx';
 import Section from '../../components/Section/Section.jsx';
-import ProductListing from '../../components/ProductListing/ProductListing.jsx'
+import ProductListing from '../../pages/ProductListingPage/ProductListingPage.jsx'
 import api from '../../services/api.js';
 
 function ProductListingPage() {
